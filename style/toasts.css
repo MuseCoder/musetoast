@@ -1,0 +1,82 @@
+@import  url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url(../img/work-4.jpg);
+    background-position:center;
+    background-size: inherit;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 10px;
+
+}
+
+.header {
+    display: inline-block;
+    text-align: center;
+}
+
+.bg {
+
+   display: table;
+   text-align: center;
+   padding-top: 50px;
+   padding-bottom: 30px;
+   margin: 30px;
+   
+}
+
+.bg_button {
+
+    text-align: center;
+    /* margin: 2rem; */
+
+}
+
+button {
+    margin: 2rem 2rem;
+    border: none;
+    background: rgb(112, 208, 204);
+    padding:10px;
+    border-radius: 10px;
+    width: 100px;
+    color: white;
+    /* margin-bottom: 30px;
+    margin-right: 145px; */
+}
+
+li {
+    margin-top: 10px ;
+    margin-bottom: 2px;
+    border: rgb(112, 208, 204) solid 2px;
+    border-radius: 10px 25px 10px;
+    background: transparent;
+    padding: 10px 0;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    width: 220px;
+    float: left;
+    box-shadow: 10px 10px 5px rgba(211, 207, 207, 0.727);
+}
+
+li:hover{
+   color:#006666;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 1rem;
+    padding-left: 100px;
+}
+

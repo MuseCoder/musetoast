@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/css/materialize.min.css">
+    <link rel="stylesheet" href="style/toasts.css">
+    <link rel="stylesheet" href="style/fontawesome/css/all.min.css">
+<title>MUSETOAST</title>
+</head>
+
+<body>
+
+    <div class="bg" id="list-container">
+
+
+    </div>
+
+    <div class="bg_button">
+
+        <button class="btn waves-effect waves-light" id="toast">Play</button>
+        <button class="btn waves-effect waves-light" id="stoptoast">Stop</button>
+
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="style/js/materialize.js"></script>
+    <script src="style/fontawesome/js/all.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            var points = ['Jumia', 'Andela', 'Lifebank', 'Interswitch', 'Mpesa', 'CC-Hub', 'flutterwave', 'Mainone', 'Swivl', 'Wari', 'paystack', 'koinstrap', 'ByCoins', 'DreamDigital', 'Palmpay', 'Opay', 'jobberman', 'Motribe', 'Luno', 'Remitano'];
+
+            var index = 0;
+            var toastInterval;
+
+            var ul = $('<ul>');
+
+            for (let i = 0; i < points.length; i++) {
+                var div = $('<div>').addClass('col s4');
+                var liElement = $('<li>');
+                var iElement = $('<i>').addClass('fa fa-paper-plane');
+                liElement.attr('id', i).text(points[i]);
+                ul.addClass('row').append(div.append(liElement.append(iElement)));
+                // var points = points[i];
+            }
+
+            $('#list-container').append(ul);
+
+            $('#toast').click(function () {
+                toastInterval = setInterval(showToast, 4500);
+            });
+
+            $('#stoptoast').click(function(){
+                clearInterval(toastInterval);
+                time = null
+                $('li').css({backgroundColor: "transparent"});
+            });
+
+            function showToast() {
+
+                do {
+                    var number = 1 + Math.floor(Math.random() * 19);
+                    $('li').css({ backgroundColor: "transparent"});
+                    if (number < points.length) {
+                        M.toast({ html: points[number], classes: 'rounded'});
+                        $('#' + number).css({ backgroundColor: "#00b3b3"});
+                        // index+=number;
+                        console.log(number);
+                    }
+
+                } while (number > 20);
+
+                
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
